@@ -1,0 +1,6 @@
+{
+  "name": "IncreaseCounter",
+  "private": true,
+  "description": "Increase a counter in database",
+  "main": "./IncreaseCounter.js"
+}

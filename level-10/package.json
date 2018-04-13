@@ -1,0 +1,14 @@
+{
+  "name": "level-10",
+  "version": "0.1.0",
+  "description": "Level 10 of your Node.js App",
+  "author": "Daniel Baptista <danielbpdias@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3"
+  }
+}

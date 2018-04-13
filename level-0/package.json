@@ -1,0 +1,14 @@
+{
+  "name": "level-0",
+  "version": "0.0.1",
+  "description": "Level 0 of your Node.js App",
+  "author": "Daniel Baptista <danielbpdias@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node sfa.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3"
+  }
+}

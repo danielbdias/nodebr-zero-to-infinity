@@ -1,0 +1,43 @@
+version: '2'
+
+services:
+  load-balancer:
+    build: ./load-balancer
+    ports:
+     - 8080:80
+    links: 
+     - web-first-instance
+     - web-second-instance
+
+  web-first-instance:
+    build: ./node-app
+    command: bash -c 'yarn && yarn start'
+    environment:
+     - DATABASE_HOST=postgres
+    volumes:
+      - ./node-app:/project
+    ports:
+     - 8081:8080
+    links: 
+     - postgres
+
+  web-second-instance:
+    build: ./node-app
+    command: bash -c 'yarn && yarn start'
+    environment:
+     - DATABASE_HOST=postgres
+    volumes:
+      - ./node-app:/project
+    ports:
+     - 8082:8080
+    links: 
+     - postgres
+
+  postgres:
+    image: postgres:9.6
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=root
+      - POSTGRES_DB=counters
+    ports:
+      - 5432:5432
